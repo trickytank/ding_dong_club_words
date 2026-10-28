@@ -41,8 +41,10 @@ sms_corpus_clean <- tm_map(sms_corpus_clean, removePunctuation)
 #sms_corpus_clean <- tm_map(sms_corpus_clean, stemDocument)
 sms_corpus_clean <- tm_map(sms_corpus_clean, stripWhitespace)
 
-wordcloud(sms_corpus_clean, min.freq = 42, random.order = FALSE)
-
+#wordcloud(sms_corpus_clean, min.freq = 500, random.order = FALSE)
+wordcloud(sms_corpus_clean, min.freq = 300, random.order = FALSE, scale = c(5,1), 
+          random.color = TRUE, rot.per=0)
+# title("100 times Karl Dinged his Dong")
 
 # make the matrix
 sms_dtm <- DocumentTermMatrix(sms_corpus_clean)
@@ -53,3 +55,10 @@ group_index <- rep(1, nrow(sms_dtm))
 
 # Find the most frequent terms across all documents combined
 findMostFreqTerms(sms_dtm, 69, INDEX = group_index)
+
+
+
+
+mostx <- findMostFreqTerms(sms_dtm, 1000, INDEX = group_index)[[1]]
+mostx["thailand"]
+mostx["fish"]
