@@ -3,6 +3,7 @@ comedy: 1866
 podcast: 1457
 shit: 1300
 Thailand: 902
+carl: 762
 Blanket: 484
 Thai: 317
 fish: 309
